@@ -1,3 +1,8 @@
+request = require "request"
+
+APP_URL = "http://localhost:8088"
+#APP_URL = "http://54.186.219.119:8088"
+
 do (module) ->
   'use strict'
   async = require('async')
@@ -31,10 +36,21 @@ do (module) ->
   Widget.renderAarstatusWidget = (widget, callback) ->  
     pre = '' + fs.readFileSync(path.resolve(__dirname, './templates/uDCB.tpl'))   
     console.log "user_id = #{widget.uid}"
-    pre = pre.replace(new RegExp("xxx", "g"), widget.uid);
-    console.log "== render widget content == \n #{pre} \n ============="
-    callback null, pre
-    return
+    pre = pre.replace(new RegExp("xxx", "g"), widget.uid)   
+    request "#{APP_URL}/usm/api/v1/scenes/#{widget.uid}", (error, response, body) ->
+      data = JSON.parse body
+      pre = pre + "<br>"
+      for item in data
+        pre = pre + """<div class="col-md-3 col-sm-6 panel">
+              <a href="#{APP_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">#{item.name} </a>
+              <img src="#{item.image}"/>
+              </div>"""
+      
+      console.log "== render widget content == \n #{pre} \n ============="
+      callback null, pre
+      return
+        
+        
 
   Widget.defineWidget = (widgets, callback) ->
     widgets.push
