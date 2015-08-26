@@ -1,5 +1,3 @@
 <div class="col-md-12 col-sm-12">
-  <div class="panel widget-panel panel-default">
-    <h3><a href="http://localhost:8080/uBuilderWebPlayer.html?userid=xxx">Online Builder</a></h3>
-  </div>
+    <h4>My Gallery &nbsp;&nbsp;<a href="http://54.186.219.119:8080/uBuilderWebPlayer.html?userid=xxx">Create New</a></h4>
 </div>
