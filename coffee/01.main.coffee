@@ -45,10 +45,20 @@ do (module) ->
       for item in data
         pre = pre + """<div class="col-md-2">
           <div id="container">
-            <img id="image"src="#{item.image}"/>
+            <img id="image" src="#{item.image}"/>
             <p id="text"> <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">#{item.name} </a></p>
           </div>          
-        </div>"""
+        </div>
+        """
+      pre = pre + """
+        <div class="col-md-12">
+          <h4>Samples</h4>
+          <div class="col-md-2">
+            <img id="image" src="https://s3-us-west-1.amazonaws.com/udcb/sample001.png"/>
+            <p id="text"> <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=sampe001_1">Sample001</a></p>
+          </div>
+        </div> 
+      """
       pre = pre.replace(new RegExp("xxx", "g"), widget.uid)   
       console.log "== render widget content == \n #{pre} \n ============="
       callback null, pre
