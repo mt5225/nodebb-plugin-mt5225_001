@@ -78,7 +78,17 @@ do (module) ->
                 <img id="image" src="https://s3-us-west-1.amazonaws.com/udcbsample/100.jpg"/>
             </a>
           </div>
-        </div>    
+        </div>
+        <div class="panel panel-warning col-md-4">
+          <div class="panel-heading">
+            <h3 class="panel-title">Xransformer</h3>
+          </div>
+          <div class="panel-body">
+            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=smallroom_1">
+                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcbsample/smallroom.jpg"/>
+            </a>
+          </div>
+        </div>
       """
       pre = pre.replace(new RegExp("xxx", "g"), widget.uid)   
       console.log "== render widget content == \n #{pre} \n ============="
