@@ -1,9 +1,9 @@
 request = require "request"
 
-APP_URL = "http://localhost:8088"
-WEB_URL = "http://localhost:8080"
-#APP_URL = "http://www.uinnova.com:8088"
-#WEB_URL = "http://www.uinnova.com"
+#APP_URL = "http://localhost:8088"
+#WEB_URL = "http://localhost:8080"
+APP_URL = "http://www.uinnova.com:8088"
+WEB_URL = "http://www.uinnova.com"
 
 do (module) ->
   'use strict'
