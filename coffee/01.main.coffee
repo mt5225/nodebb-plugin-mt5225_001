@@ -43,23 +43,42 @@ do (module) ->
       data = JSON.parse body
       pre = pre + "<br>"
       for item in data
-        pre = pre + """<div class="col-md-2">
-          <div id="container">
-            <img id="image" src="#{item.image}"/>
-            <p id="text"> <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">#{item.name} </a></p>
-          </div>          
-        </div>
+        pre = pre + """
+        <div class="panel panel-info col-md-2">
+          <div class="panel-heading">
+            <h4 class="panel-title">#{item.name}</h4>
+          </div>
+          <div class="panel-body">
+            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">
+                 <img id="image" src="#{item.image}"/>
+            </a>
+          </div>
+        </div> 
         """
       pre = pre + """
         <div class="col-md-12">
-          <h4>Datacenter Samples</h4>
+          <h3>Samples</h3>
         </div>         
-        <div class="col-md-2">
-          <div id="container">
-            <img id="image" src="https://s3-us-west-1.amazonaws.com/udcb/sample001.png"/>
-            <p id="text"> <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=sample001_1">Sample001</a></p>
+        <div class="panel panel-success col-md-4">
+          <div class="panel-heading">
+            <h3 class="panel-title">DC Sample 001</h3>
           </div>
-        </div>        
+          <div class="panel-body">
+            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=sample001_1">
+                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcb/sample001.png"/>
+            </a>
+          </div>
+        </div>     
+        <div class="panel panel-warning col-md-4">
+          <div class="panel-heading">
+            <h3 class="panel-title">DC Sample 002</h3>
+          </div>
+          <div class="panel-body">
+            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=sample001_1">
+                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcb/sample001.png"/>
+            </a>
+          </div>
+        </div>    
       """
       pre = pre.replace(new RegExp("xxx", "g"), widget.uid)   
       console.log "== render widget content == \n #{pre} \n ============="
