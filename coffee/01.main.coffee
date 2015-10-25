@@ -65,7 +65,7 @@ do (module) ->
           </div>
           <div class="panel-body">
             <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=sample001_1">
-                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcb/sample001.png"/>
+                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcbsample/sample001.jpg"/>
             </a>
           </div>
         </div>     
