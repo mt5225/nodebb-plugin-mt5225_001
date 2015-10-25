@@ -79,9 +79,9 @@ do (module) ->
             </a>
           </div>
         </div>
-        <div class="panel panel-warning col-md-4">
+        <div class="panel panel-danger col-md-4">
           <div class="panel-heading">
-            <h3 class="panel-title">Xransformer</h3>
+            <h3 class="panel-title">Small Server Room</h3>
           </div>
           <div class="panel-body">
             <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=smallroom_1">
