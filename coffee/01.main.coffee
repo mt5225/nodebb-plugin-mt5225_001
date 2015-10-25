@@ -1,9 +1,9 @@
 request = require "request"
 
-# APP_URL = "http://localhost:8088"
-# WEB_URL = "http://localhost:8080"
-APP_URL = "http://www.uinnova.com:8088"
-WEB_URL = "http://www.uinnova.com"
+APP_URL = "http://localhost:8088"
+WEB_URL = "http://localhost:8080"
+#APP_URL = "http://www.uinnova.com:8088"
+#WEB_URL = "http://www.uinnova.com"
 
 do (module) ->
   'use strict'
@@ -71,11 +71,11 @@ do (module) ->
         </div>     
         <div class="panel panel-warning col-md-4">
           <div class="panel-heading">
-            <h3 class="panel-title">DC Sample 002</h3>
+            <h3 class="panel-title">Xransformer</h3>
           </div>
           <div class="panel-body">
-            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=sample001_1">
-                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcb/sample001.png"/>
+            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=Xransformer_1">
+                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcbsample/100.jpg"/>
             </a>
           </div>
         </div>    
