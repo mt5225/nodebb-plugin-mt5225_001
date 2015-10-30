@@ -79,16 +79,6 @@ do (module) ->
             </a>
           </div>
         </div>
-        <div class="panel panel-danger col-md-3">
-          <div class="panel-heading">
-            <h3 class="panel-title">Small Server Room</h3>
-          </div>
-          <div class="panel-body">
-            <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=smallroom_1">
-                <img id="image" src="https://s3-us-west-1.amazonaws.com/udcbsample/smallroom.jpg"/>
-            </a>
-          </div>
-        </div>
         <div class="panel panel-primary col-md-3">
           <div class="panel-heading">
             <h3 class="panel-title">DC843</h3>
