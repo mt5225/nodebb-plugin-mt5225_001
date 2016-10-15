@@ -67,8 +67,8 @@ $(function() {
           $.get( url, function(data, status) {
             var json_data = JSON.stringify(data);
             console.log(json_data);
-            if(status === 200) {
-              alert("scene deleted successfully");
+            if(/success$/.test(json_data['status'])) {
+              alert(json_data['status']);
               location.reload();
             } else {
               alert("fail to delete scene");
