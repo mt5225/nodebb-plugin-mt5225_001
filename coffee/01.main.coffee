@@ -53,7 +53,7 @@ do (module) ->
                  <img id="image" src="#{item.image}"/>
             </a>
             <br/>
-            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete"> <span class="glyphicon glyphicon-remove"></span> Delete </a>
+            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete"><span class="glyphicon glyphicon-remove"></span> Delete </a>
           </div>
         </div>
         <script> 
@@ -62,7 +62,7 @@ do (module) ->
             $("#delete").click(function( event ) {
                  console.log( "inside delete action" );
                  event.preventDefault();
-            }
+            });
           });
         </script>
         """
