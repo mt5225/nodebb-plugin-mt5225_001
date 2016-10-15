@@ -139,8 +139,8 @@ do (module) ->
   Widget.defineWidget = (widgets, callback) ->
     widgets.push
       widget: 'arrstatus'
-      name: 'MT5225 Server Status'
-      description: 'Shows MT5225 Server Status.'
+      name: 'uDCB Private Scenes'
+      description: 'Show uDCB Private Scenes.'
       content: fs.readFileSync(path.resolve(__dirname, './templates/widget.tpl'))
     callback null, widgets
     return
