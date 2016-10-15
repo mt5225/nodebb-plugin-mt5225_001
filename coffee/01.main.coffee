@@ -52,7 +52,8 @@ do (module) ->
             <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">
                  <img id="image" src="#{item.image}"/>
             </a>
-            <a href="#"> delete </a>
+            <br/>
+            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; <a href="#"> <span class="glyphicon glyphicon-minus"></span> Delete </a>
           </div>
         </div> 
         """

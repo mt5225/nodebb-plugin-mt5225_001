@@ -1,7 +1,7 @@
 {
   "id": "nodebb-widget-mt5225_001",
   "name": "nodebb-plugin-mt5225_001",
-  "version": "0.0.1-29",
+  "version": "0.0.1-30",
   "description": "plugin_mt5225_001",
   "main": "index.js",
   "repository": {
