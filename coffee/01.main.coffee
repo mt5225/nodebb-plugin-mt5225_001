@@ -52,6 +52,7 @@ do (module) ->
             <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">
                  <img id="image" src="#{item.image}"/>
             </a>
+            <a href="#"> delete </a>
           </div>
         </div> 
         """
