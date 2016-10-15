@@ -75,7 +75,7 @@ $(function() {
     $("#delete").click(function(event) {
         console.log("inside delete action");
         $.get("http://uinnova.com:8088/usm/api/v1/scenes/delete/#{item.sceneid}", function(data, status) {
-            console.log("Data: " + data + "\nStatus: " + status);
+            console.log(data);
             json_data = JSON.stringify(data);
             $(".modal-body").text(json_data);
             $('#resultModal').modal('show'); 
