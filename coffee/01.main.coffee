@@ -53,7 +53,7 @@ do (module) ->
                  <img id="image" src="#{item.image}"/>
             </a>
             <br/>
-            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete_#{item.sceneid}"><span class="glyphicon glyphicon-remove"></span> Delete </a>
+            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete#{item.sceneid}"><span class="glyphicon glyphicon-remove"></span> Delete </a>
           </div>
         </div>
         <!-- Modal Window for Message-->
@@ -74,7 +74,15 @@ $(function() {
     $('a').click(function(event) {
         console.log(event.target.id);
         if(/^delete/.test(event.target.id)) {
-          event.preventDefault();
+          var scene_id = event.target.id.split("delete_")[1];
+          var url = "http://uinnova.com:8088/usm/api/v1/scenes/delete/" + scene_id;
+          $.get( url, function(data, status) {
+            var json_data = JSON.stringify(data);
+            console.log(json_data);
+            $(".modal-body").text(json_data);
+            $('#resultModal').modal('show'); 
+          });
+          //event.preventDefault();
         }
     })
 });
