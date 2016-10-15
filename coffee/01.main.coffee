@@ -56,24 +56,6 @@ do (module) ->
             <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete_#{item.sceneid}"><span class="glyphicon glyphicon-remove"></span> Delete </a>
           </div>
         </div>
-        <!-- Modal Window for Message-->
-<div class="modal fade" tabindex="-1" role="dialog" id="messageModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 <script>
 $(function() {
     console.log("ready!");
@@ -85,8 +67,13 @@ $(function() {
           $.get( url, function(data, status) {
             var json_data = JSON.stringify(data);
             console.log(json_data);
-            $('#messageModal').modal('show');
-            location.reload();
+            if(status === 200) {
+              alert("scene deleted successfully");
+              location.reload();
+            } else {
+              alert("fail to delete scene");
+            }
+            
           });
           event.preventDefault();
         }
