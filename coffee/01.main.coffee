@@ -57,17 +57,13 @@ do (module) ->
           </div>
         </div>
         <!-- Modal Window for Message-->
-        <div id="resultModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">Message</h3>
-            </div>
-            <div class="modal-body" id="messageBody">
-            </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        </div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" id="messageModal" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+       Scene deleted.
+    </div>
+  </div>
+</div>
 <script>
 $(function() {
     console.log("ready!");
@@ -79,10 +75,9 @@ $(function() {
           $.get( url, function(data, status) {
             var json_data = JSON.stringify(data);
             console.log(json_data);
-            $(".modal-body").text(json_data);
-            $('#resultModal').modal('show'); 
+            $('#messageModal').modal('show')     
           });
-          //event.preventDefault();
+          event.preventDefault();
         }
     })
 });
