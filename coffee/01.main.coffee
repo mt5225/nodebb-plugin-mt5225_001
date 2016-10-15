@@ -53,7 +53,7 @@ do (module) ->
                  <img id="image" src="#{item.image}"/>
             </a>
             <br/>
-            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete"><span class="glyphicon glyphicon-remove"></span> Delete </a>
+            <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete_#{item.sceneid}"><span class="glyphicon glyphicon-remove"></span> Delete </a>
           </div>
         </div>
         <!-- Modal Window for Message-->
@@ -62,8 +62,7 @@ do (module) ->
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h3 id="myModalLabel">Message</h3>
             </div>
-            <div class="modal-body">
-                <p>Delete Scene Success !</p>
+            <div class="modal-body" id="messageBody">
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -72,15 +71,11 @@ do (module) ->
 <script>
 $(function() {
     console.log("ready!");
-    $("#delete").click(function(event) {
-        console.log("inside delete action");
-        $.get("http://uinnova.com:8088/usm/api/v1/scenes/delete/#{item.sceneid}", function(data, status) {
-            console.log(data);
-            json_data = JSON.stringify(data);
-            $(".modal-body").text(json_data);
-            $('#resultModal').modal('show'); 
-        });
-        event.preventDefault();
+    $('a').click(function(event) {
+        console.log(event.target.id);
+        if(/^delete/.test(event.target.id)) {
+          event.preventDefault();
+        }
     })
 });
 </script>
