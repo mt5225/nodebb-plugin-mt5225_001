@@ -72,7 +72,8 @@ $(function() {
             console.log(json_data);
             console.log(status);  
             if(status === 'success') {
-                alert(json_data['status']);
+                alert('delete scene success');
+                location.reload();
               }else {
                 alert('delete scene failed');
                 }        
