@@ -56,6 +56,9 @@ do (module) ->
             <a href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> &nbsp; &nbsp; &nbsp;<a href="#" id="delete_#{item.sceneid}"><span class="glyphicon glyphicon-remove"></span> Delete </a>
           </div>
         </div>
+        """
+      
+      pre = pre + """
 <script>
 $(function() {
     console.log("ready!");
@@ -67,14 +70,19 @@ $(function() {
           $.get( url, function(data, status) {
             var json_data = JSON.stringify(data);
             console.log(json_data);
-            console.log(status);            
+            console.log(status);  
+            if(status === 'success') {
+                alert(json_data['status']);
+              }else {
+                alert('delete scene failed');
+                }        
           });
           event.preventDefault();
         }
     })
 });
 </script>
-        """
+      """
       pre = pre + """
         <div class="col-md-12">
           <h3>Samples</h3>
