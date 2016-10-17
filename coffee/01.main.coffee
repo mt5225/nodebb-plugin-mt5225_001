@@ -46,7 +46,7 @@ do (module) ->
         pre = pre + """
         <div class="panel panel-info col-md-2">
           <div class="panel-heading">
-            <h4 class="panel-title">#{item.name}</h4>
+            <h4 class="panel-title warp">#{item.name}</h4>
           </div>
           <div class="panel-body">
             <a id="scene" href="#{WEB_URL}/uBuilderWebPlayer.html?userid=#{widget.uid}&scene_id=#{item.sceneid}">
