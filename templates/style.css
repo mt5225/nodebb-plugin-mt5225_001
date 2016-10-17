@@ -2,4 +2,5 @@
     word-wrap: break-word; 
     display: inline-block;
     overflow: auto;
+    width: 100%;
 }
